@@ -15,9 +15,11 @@ with open("config.yaml") as inp:
     CLIENTS = config['clients']
     ADMIN_ID = config['admin_id']
     OPTIONS = config['options']
+    TELEGRAM_CREDS = config['telegram_creds']
+    GSHEETS_CREDS_PATH = config['gsheets_creds_path']
 
-bot = telebot.TeleBot(os.environ.get('TELEGRAM_CREDS'))
-gc = gspread.service_account(filename=os.environ.get('GSHEETS_CREDS_PATH'))
+bot = telebot.TeleBot(TELEGRAM_CREDS)
+gc = gspread.service_account(filename=GSHEETS_CREDS_PATH)
 logger = getLogger(__name__)
 logger.setLevel('INFO')
 logger.addHandler(StreamHandler())
