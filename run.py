@@ -218,8 +218,8 @@ if __name__ == '__main__':
     # thread = Thread(target=do_schedule)
     # thread.start()
 
-    # test_client = Client(**CLIENTS[0]) #TODO: get client by title from list in clients
-    # create_poll_for_client(test_client, 1, day=date(2023, 4, 4))
+    test_client = Client(**CLIENTS[0]) #TODO: get client by title from list in clients
+    create_poll_for_client(test_client, 1, day=date(2023, 4, 4))
 
     logger.info('Starting polling...')
     bot.infinity_polling()
